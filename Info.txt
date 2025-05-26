@@ -1,0 +1,28 @@
+https://retoolapi.dev/raxrWS/EXPO
+Endpoint URL
+
+HTTP method endpoints
+
+GET
+/raxrWS/EXPO
+
+GET filter
+/raxrWS/EXPO?nombre=value
+
+GET by id
+/raxrWS/EXPO/1
+
+GET paginate
+/raxrWS/EXPO?_page=2&_limit=10
+
+POST
+/raxrWS/EXPO
+
+PUT
+/raxrWS/EXPO/1
+
+PATCH
+/raxrWS/EXPO/1
+
+DELETE
+/raxrWS/EXPO/1

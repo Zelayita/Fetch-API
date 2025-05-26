@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestion de Equipo Expo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+
+<body>
+    <header class="container">
+        <nav>
+            <ul>
+                <li><b>Gestion EXPO System GoPro</b></li>
+            </ul>
+            <ul>
+                <li><a href="#">Integrantes</a></li>
+                <li><a href="#">Tareas</a></li>
+                <li><a href="#">Mi Perfil</a></li>
+                <li><a href="#" role="button" >Cerrar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Integrantes del Grupo</h2>
+
+        <table id="tabla" class="overflow-auto">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Correo Electronico</th>
+                    <th>Acciones</th> <!--Para botones adicionales-->
+                </tr>
+            </thead>
+            <tbody>
+                <!--Aqui van los registros de la base que vienen a traves de la API-->
+            </tbody>
+        </table>
+    </main>
+    
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
