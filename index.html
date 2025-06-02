@@ -42,6 +42,27 @@
             </tbody>
         </table>
     </main>
+
+    <!--Modal para agregar registros-->
+        <dialog id="modalAgregar">
+        <article>
+            <header>
+                <a href="#" class="close" id="btnCerrarModal"></a>
+                <h3>Agregar Integrantes</h3>
+            </header>
+            <form id="frmAgregar">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+
+                <input type="text" id="apellido" placeholder="Apellido" required>
+
+                <input type="number" placeholder="Edad" id="edad" required>
+
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+
+                <button type="submit" class="contrast">Guardar</button>
+            </form>
+        </article>
+    </dialog>
     
     <!-- Boton flotante para agregar registros-->
     <button class="add-button" id="btnAbrirModal" title="Agregar Integrantes">
