@@ -84,7 +84,7 @@ document.getElementById("frmAgregar").addEventListener("submit", async  e => {
         document.getElementById("frmAgregar").reset();
         //Cerrar el formulario
         modal.close();
-        //Recargar la tabla
+        //Para Recargar la tabla
         ObtenerPersonas();
     }
     else{
