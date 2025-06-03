@@ -30,3 +30,8 @@
 .add-button:hover{
     transform: scale(1.1); /*El boton crece 1.1 veces su tamaño*/
 }
+
+
+.tabla-scroll{
+    overflow-x: auto; /*Scroll horizontal*/
+}

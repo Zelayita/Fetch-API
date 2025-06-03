@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,25 +23,29 @@
         </nav>
     </header>
 
-    <main class="container">
-        <h2>Integrantes del Grupo</h2>
+    <div  class="tabla-scroll">
+        <main class="container">
+            <h2>Integrantes del Grupo</h2>
+    
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Correo Electronico</th>
+                        <th>Acciones</th> <!--Para botones adicionales-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Aqui van los registros de la base que vienen a traves de la API-->
+                </tbody>
+            </table>
+        </main>
+    
+    </div>
 
-        <table id="tabla" class="overflow-auto">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Edad</th>
-                    <th>Correo Electronico</th>
-                    <th>Acciones</th> <!--Para botones adicionales-->
-                </tr>
-            </thead>
-            <tbody>
-                <!--Aqui van los registros de la base que vienen a traves de la API-->
-            </tbody>
-        </table>
-    </main>
 
     <!--Modal para agregar registros-->
         <dialog id="modalAgregar">
