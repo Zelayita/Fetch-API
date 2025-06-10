@@ -30,7 +30,7 @@ function CrearTabla(datos){ //"datos" representa al JSON que viene de la API
                 <td>${persona.edad}</td>
                 <td>${persona.Correo}</td>
                 <td>
-                    <button>Editar</button>
+                    <button onClick = "AbrirModalEditar(${persona.id}, '${persona.nombre}', '${persona.apellido}', ${persona.edad}, '${persona.Correo}')">Editar</button>
                     <button onClick = "EliminarRegistros(${persona.id})">Eliminar</button>
                 </td>
             <tr>
@@ -105,6 +105,67 @@ async function EliminarRegistros(id) { //Se pide ID para borrar
         ObtenerPersonas(); //Para Obtener la Lista Actualizada
     }
 }
+
+
+
+//Proceso para editar los Registros
+const ModalEditar = document.getElementById("modalEditar");
+const btnCerrarEditar = document.getElementById("btnCerrarEditar");
+
+
+//EventListener para cerrar el Modal de Editar
+btnCerrarEditar.addEventListener("click",() =>{
+    ModalEditar.close(); //Cerrar el formulario
+});
+
+
+function AbrirModalEditar(id,nombre,apellido,edad,Correo){
+    //Colocamos directamente el valor a los input con la propiedad "value"
+    document.getElementById("idEditar").value = id;
+    document.getElementById("nombreEditar").value = nombre;
+    document.getElementById("apellidoEditar").value = apellido;
+    document.getElementById("edadEditar").value = edad;
+    document.getElementById("emailEditar").value = Correo;
+
+    ModalEditar.showModal(); //El modal se abre cuando ya tiene los valores ingresados
+}
+
+
+document.getElementById("frmEditarIntegrante").addEventListener("submit", async e =>{
+    e.preventDefault();//Evitamos que el formulario se envie de inmediato
+
+    //Capturamos los valores del formulario
+    const id = document.getElementById("idEditar").value;
+    const nombre = document.getElementById("nombreEditar").value.trim();
+    const apellido = document.getElementById("apellidoEditar").value.trim();
+    const edad = document.getElementById("edadEditar").value.trim();
+    const Correo = document.getElementById("emailEditar").value.trim();
+
+    //Validar que los campos esten bien
+    if(!nombre || !apellido || !edad || !Correo || !id){
+        alert("Complete todos los Campos. Por favor 😡🤬😡🤬😡");
+        return;
+    }
+
+    const respuesta = await fetch(`${API_URL}/${id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},  
+        body: JSON.stringify({edad, Correo, nombre, apellido})
+    });
+
+
+    if(respuesta.ok){
+        alert("Registro Actualizado Completamente");
+        ModalEditar.close(); //Cerramos el modal
+        ObtenerPersonas();//Recargamos la lista
+    }
+    else{
+        alert("Error al Actualizar");
+    }
+});
+
+
+
 
 
 
